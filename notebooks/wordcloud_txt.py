@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[12]:
+# In[2]:
 
 
 import os
@@ -9,32 +9,28 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
 
-# In[4]:
-
-
-# get cwd
-cwd = os.getcwd()
-cwd
-
-
-# In[6]:
-
-
-ls
-
-
-# In[8]:
+# In[3]:
 
 
 # construct the path
-file_path = os.path.join(cwd, 'sherlock.txt')
+file_path = os.path.join('data/sherlock.txt')
+
+
+# In[12]:
+
 
 # read the file
 with open(file_path, 'r') as file:
-    text = file.read()
+    # Read the first 5 lines
+    line_count = 0
+    for line in file:
+        print(line)
+        line_count += 1
+        if line_count == 5:
+            break
 
 
-# In[13]:
+# In[11]:
 
 
 # generate a wordcloud image
